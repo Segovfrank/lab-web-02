@@ -1,0 +1,27 @@
+<main role="main" class="container">
+  <div class="starter-template">
+    <h1>Admin page</h1>
+    <p>
+      <a href="/logout">Cierra sesión</a>
+    </p>
+    <table class="table">
+  <thead>
+    <tr>
+      <th><title="Id">Id</th>
+      <th><title="Name">Name</th>
+      <th><title="Role">Role</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each users}}
+    <tr>
+      <th>{{{this.id}}}</th>
+      <td><strong>{{{this.name}}}</strong></td>
+      <td>{{{this.role}}}</td>
+    </tr>  
+        {{/each}}
+      
+  </tbody>
+</table>
+  </div>
+</main>

@@ -54,7 +54,12 @@ app.use(passport.session());
  * Routes
  */
 app.use('/', webRoutes);
+app.use('/app/dashboard', authMiddleware.isUserOrAdmin, appRoutes);
+app.use('/app/users', authMiddleware.isAdmin, appRoutes);
 app.use('/app', authMiddleware.isAuth, appRoutes);
+
+
+//
 
 /**
  * App Init

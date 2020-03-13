@@ -2,12 +2,11 @@ const userModel = require('../models/User');
 
 
 exports.index = (req, res) => {
-  let user = req.user;
   //console.log(user);
-  userModel.getUserRole(user.id)
+  userModel.getUsersWithRoles()
   .then((data) => {
-    console.log(data)
-    res.render('dashboard/index', {user: user, role: data[0].role});
+    console.log(data[0])
+    res.render('dashboard/userIndex', {users: data[0]});
   })
   .catch((error) => console.log(error));
 }
